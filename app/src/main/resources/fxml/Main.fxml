@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane styleClass="grid-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soft2412.a2.controller.MainPageController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="85.0" />
+    </columnConstraints>
+
+    <VBox styleClass="sidebar" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Button fx:id="userProfile" onAction="#goToUserProfile" styleClass="user-profile" text="User" />
+        <Label fx:id="userProfileRole" styleClass="user-profile-role">Standard</Label>
+        <Button onAction="#goToMainPage" styleClass="menu-button" text="Home" />
+        <Button onAction="#goToUploadScrollPage" styleClass="menu-button" text="Upload Scroll" />
+        <Button fx:id="adminDashboardButton" onAction="#goToAdminDashboard" styleClass="menu-button" text="Admin Dashboard" visible="false" />
+        <Button onAction="#logout" styleClass="menu-button" text="Logout" />
+    </VBox>
+    <GridPane GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="100" />
+        </columnConstraints>
+
+        <Label fx:id="scrolloftheday" text="Text" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+        <HBox fx:id="navBar" styleClass="nav-bar" spacing="10" alignment="CENTER_RIGHT" prefWidth="850.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <ComboBox fx:id="CategoryDropDown" prefHeight="26.0" prefWidth="150.0" />
+            <TextField fx:id="searchBar" prefHeight="26.0" prefWidth="611.0" promptText="Looking for something?" />
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#updateTableOnSearch" text="Search" />
+        </HBox>
+
+        <TableView fx:id="tableView" styleClass="table-view" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <columns>
+                <TableColumn fx:id="dateColumn" text="Date" />
+                <TableColumn fx:id="scrollNameColumn" text="Scroll Name" />
+                <TableColumn fx:id="fileNameColumn" text="File Name" />
+                <TableColumn fx:id="uploaderColumn" text="Uploader" />
+                <TableColumn fx:id="downloadsColumn" text="Downloads" />
+                <TableColumn fx:id="downloadButtonColumn" text="Download" />
+                <TableColumn fx:id="previewButtonColumn" text="Preview" />
+                <TableColumn fx:id="deleteButtonColumn" text="Delete" />
+            </columns>
+        </TableView>
+
+        <rowConstraints>
+            <RowConstraints percentHeight="5"/>
+            <RowConstraints percentHeight="5"/>
+            <RowConstraints percentHeight="90" vgrow="ALWAYS" />
+        </rowConstraints>
+
+    </GridPane>
+
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
+
+</GridPane>

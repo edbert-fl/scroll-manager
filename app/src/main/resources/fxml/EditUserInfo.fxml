@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="soft2412.a2.controller.EditUserInfoController" alignment="CENTER">
+    <Label fx:id="messageLabel" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <TextField fx:id="textField" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <Button GridPane.halignment="RIGHT" text="Save" GridPane.columnIndex="0" GridPane.rowIndex="2" onAction="#handleSave"/>
+</GridPane>

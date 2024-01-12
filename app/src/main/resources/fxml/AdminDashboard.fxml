@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="soft2412.a2.controller.AdminPageController" styleClass="grid-pane">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="288.0" percentWidth="15.0" prefWidth="288.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="576.0" percentWidth="30.0" prefWidth="576.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="1056.0" percentWidth="55.0" prefWidth="1056.0" />
+    </columnConstraints>
+
+    <VBox styleClass="sidebar" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Button fx:id="userProfile" styleClass="user-profile" onAction="#goToUserProfile"></Button>
+        <Label fx:id="userProfileRole" styleClass="user-profile-role">Standard</Label>
+        <Button styleClass="menu-button" text="Home" onAction="#goToMainPage"/>
+        <Button styleClass="menu-button" text="Upload Scroll" onAction="#goToUploadScrollPage"/>
+        <Button fx:id="adminDashboardButton" styleClass="menu-button" text="Admin Dashboard" visible="false" onAction="#goToAdminDashboard"/>
+        <Button styleClass="menu-button" text="Logout" onAction="#logout"/>
+    </VBox>
+
+    <GridPane styleClass="stats-box" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <VBox styleClass="card-container" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <VBox styleClass="card">
+                <Label fx:id="downloadStatLabel" styleClass="stat-label">Total Downloads</Label>
+                <Label fx:id="totalDownloadStat" styleClass="stat"></Label>
+            </VBox>
+        </VBox>
+        <VBox styleClass="card-container"  GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <VBox styleClass="card">
+                <Label fx:id="totalUserStatLabel" styleClass="stat-label">Total Users</Label>
+                <Label fx:id="totalUserStat" styleClass="stat"></Label>
+            </VBox>
+        </VBox>
+        <VBox styleClass="card-container"  GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <VBox styleClass="card">
+                <Label fx:id="uploadStatLabel" styleClass="stat-label">Total Scrolls</Label>
+                <Label fx:id="totalScrollsStat" styleClass="stat"></Label>
+            </VBox>
+        </VBox>
+    </GridPane>
+    <GridPane GridPane.columnIndex="2" GridPane.rowIndex="0">
+        <GridPane styleClass="grid-table" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="800.0" percentWidth="80.0" prefWidth="800.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" percentWidth="20.0" prefWidth="200.0" />
+            </columnConstraints>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Button styleClass="add-users-button" GridPane.halignment="RIGHT" text="Add New User" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#createNewUser"/>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" minHeight="40.0" prefHeight="40.0" />
+            </rowConstraints>
+        </GridPane>
+        <TableView fx:id="tableView" styleClass="table-view" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <columns>
+                <TableColumn text="Key ID" fx:id="keyIDColumn"/>
+                <TableColumn text="Username" fx:id="usernameColumn"/>
+                <TableColumn text="Email" fx:id="emailColumn"/>
+                <TableColumn text="Uploads" fx:id="numberOfScrolls"/>
+                <TableColumn text="First Name" fx:id="firstNameColumn"/>
+                <TableColumn text="Last Name" fx:id="lastNameColumn"/>
+                <TableColumn text="Account Type" fx:id="accountTypeColumn"/>
+                <TableColumn text="Edit" fx:id="editUserButtonColumn"/>
+                <TableColumn text="Permissions" fx:id="changeAccountTypeButtonColumn"/>
+            </columns>
+        </TableView>
+    </GridPane>
+
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
+
+</GridPane>

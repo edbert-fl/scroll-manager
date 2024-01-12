@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane fx:id="gridPane" alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml" fx:controller="soft2412.a2.controller.SecondRegisterController">
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints prefHeight="50" />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints prefHeight="200" />
+    </rowConstraints>
+    <Label fx:id="registerTitle" text="Register" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="title-label"/>
+    <Label text="E-mail" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="emailField" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <Label text="First Name" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <TextField fx:id="firstNameField" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <Label text="Last Name" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <TextField fx:id="lastNameField" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+    <Label text="Phone Number" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+    <TextField fx:id="phoneNumberField" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+    <Label GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+    <Button fx:id="registerButton" text="Register" GridPane.columnIndex="0" GridPane.rowIndex="10" onAction="#handleRegistrationSecondPage" styleClass="register-button"/>
+    <Button fx:id="loginButton" text="Login" GridPane.columnIndex="0" GridPane.rowIndex="11" onAction="#returnToLogin" styleClass="register-button"/>
+    <Label fx:id="messageLabel" GridPane.columnIndex="0" GridPane.rowIndex="12"/>
+</GridPane>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="soft2412.a2.controller.UserProfileController" styleClass="grid-pane">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" percentWidth="15.0" prefWidth="150.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="400.0" percentWidth="40.0" prefWidth="400.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="450.0" percentWidth="45.0" prefWidth="450.0" />
+    </columnConstraints>
+
+    <VBox styleClass="sidebar" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Button fx:id="userProfile" styleClass="user-profile" onAction="#goToUserProfile" />
+        <Label fx:id="userProfileRole" styleClass="user-profile-role">Standard</Label>
+        <Button styleClass="menu-button" text="Home" onAction="#goToMainPage"/>
+        <Button styleClass="menu-button" text="Upload Scroll" onAction="#goToUploadScrollPage"/>
+        <Button fx:id="adminDashboardButton" styleClass="menu-button" text="Admin Dashboard" visible="false" onAction="#goToAdminDashboard" />
+        <Button styleClass="menu-button" text="Logout" onAction="#logout"/>
+    </VBox>
+
+    <GridPane styleClass="user-info-grid" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="42.5" />
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="27.5" />
+        </columnConstraints>
+
+        <Label text="User Settings" styleClass="user-profile" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+        <Label text="KEY ID" styleClass="user-info-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Label fx:id="keyIDLabel" styleClass="user-info" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Button text="Edit" GridPane.halignment="LEFT" styleClass="edit-button" onAction="#editKeyID" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+        <Label text="FIRST NAME" styleClass="user-info-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Label fx:id="firstNameLabel" styleClass="user-info" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Button text="Edit" GridPane.halignment="LEFT" styleClass="edit-button" onAction="#editFirstName" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+        <Label text="LAST NAME" styleClass="user-info-label" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <Label fx:id="lastNameLabel" text="Doe" styleClass="user-info" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <Button text="Edit" GridPane.halignment="LEFT" styleClass="edit-button" onAction="#editLastName" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+
+        <Label text="EMAIL" styleClass="user-info-label" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <Label fx:id="emailLabel" text="email@gmail.com" styleClass="user-info" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        <Button text="Edit" GridPane.halignment="LEFT" styleClass="edit-button" onAction="#editEmail" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+
+        <Label text="PHONE NUMBER" styleClass="user-info-label" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <Label fx:id="phoneNumberLabel" text="012345678" styleClass="user-info" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+        <Button text="Edit" GridPane.halignment="LEFT" styleClass="edit-button" onAction="#editPhoneNumber" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+
+        <Label text="PASSWORD" styleClass="user-info-label" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+        <Button text="Edit" GridPane.halignment="LEFT" styleClass="edit-button" onAction="#editPassword" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+
+        <Label text="ACCOUNT TYPE" styleClass="user-info-label" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+        <Label fx:id="accountTypeLabel" text="Standard" styleClass="user-info" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+        <Label GridPane.columnIndex="2" GridPane.rowIndex="8" />
+
+        <GridPane GridPane.valignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="8" GridPane.columnSpan="2">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="60.0" />
+            </columnConstraints>
+            <Button text="Save" GridPane.halignment="LEFT" styleClass="save-button" onAction="#saveChanges" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Button text="Cancel" GridPane.halignment="LEFT" styleClass="save-button" onAction="#cancelChanges" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label fx:id="messageLabel" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        </GridPane>
+
+        <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" prefHeight="40.0" />
+            <RowConstraints vgrow="SOMETIMES" prefHeight="40.0" />
+            <RowConstraints vgrow="SOMETIMES" prefHeight="40.0" />
+            <RowConstraints vgrow="SOMETIMES" prefHeight="40.0" />
+            <RowConstraints vgrow="SOMETIMES" prefHeight="40.0" />
+            <RowConstraints vgrow="SOMETIMES" prefHeight="40.0" />
+            <RowConstraints vgrow="SOMETIMES" prefHeight="40.0" />
+            <RowConstraints vgrow="SOMETIMES" prefHeight="40.0" />
+            <RowConstraints vgrow="SOMETIMES" prefHeight="80.0" />
+            <RowConstraints vgrow="SOMETIMES" prefHeight="100.0" />
+        </rowConstraints>
+    </GridPane>
+
+    <TableView fx:id="tableView" styleClass="table-view" GridPane.columnIndex="2" GridPane.rowIndex="0">
+        <columns>
+            <TableColumn text="Date" fx:id="dateColumn"/>
+            <TableColumn text="Scroll Name" fx:id="scrollNameColumn"/>
+            <TableColumn text="File Name" fx:id="fileNameColumn"/>
+            <TableColumn text="Uploader" fx:id="uploaderColumn"/>
+            <TableColumn text="Downloads" fx:id="downloadsColumn"/>
+            <TableColumn text="Download" fx:id="downloadButtonColumn"/>
+            <TableColumn text="Edit" fx:id="editButtonColumn"/>
+            <TableColumn text="Delete" fx:id="deleteButtonColumn"/>
+        </columns>
+    </TableView>
+
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
+</GridPane>
